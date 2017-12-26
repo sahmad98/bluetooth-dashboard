@@ -88,10 +88,8 @@ var AppComponent = (function () {
     AppComponent.prototype.onSubmit = function () {
         var _this = this;
         var query = { 'host': this.host, 'location': this.location, 'event': this.event };
-        //console.log("Submiited: " + query);
-        this.dataService.getQuery(query).subscribe(function (val) { return _this.table_data = val; }, function (err) { return console.log(err); }
-        //() => console.log(this.table_data)
-        );
+        console.log("Submiited: " + query);
+        this.dataService.getQuery(query).subscribe(function (val) { return _this.table_data = val; }, function (err) { return console.log(err); }, function () { return console.log(_this.table_data); });
     };
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -189,7 +187,7 @@ var DataService = (function () {
     DataService.prototype.getQuery = function (query) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        //console.log('Querying');
+        console.log('Querying');
         return this.http.post(this.url + "getdata", JSON.stringify(query), options).map(function (res) { return res.json(); });
     };
     DataService = __decorate([
