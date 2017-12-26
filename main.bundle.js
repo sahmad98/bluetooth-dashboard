@@ -180,7 +180,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var DataService = (function () {
     function DataService(http) {
         this.http = http;
-        this.url = "http://35.226.119.121:5000/";
+        this.url = "http://35.225.37.10:5000/";
     }
     ;
     DataService.prototype.getData = function () {
